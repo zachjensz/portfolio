@@ -6,6 +6,11 @@
   --text-alt: #fff;
   --family: sans-serif;
 
+  --link: #f00;
+  --link-visited: #c00;
+  --link-hover-focus: var(--link);
+  --link-active: var(--text);
+
   --title-family: serif;
   --title-weight: 500;
 }
@@ -16,6 +21,11 @@
 
     --text: #222;
     --text-alt: #222;
+
+    --link: #c00;
+    --link-visited: #c00;
+    --link-hover-focus: #f44;
+    --link-active: var(--text);
       
     --title-weight: 300;
   }
@@ -27,6 +37,11 @@
 
     --text: #fafafa;
     --text-alt: #fafafa;
+
+    --link: #ff6b63;
+    --link-visited: #c00;
+    --link-hover-focus: #f44;
+    --link-active: var(--text);
       
     --title-weight: 600;
   }
@@ -66,4 +81,27 @@ h1 {
 }
 h2 {
   font-size: clamp(1rem, calc(1rem + 1vmin), 5rem);
+}
+h3 {
+  font-size: clamp(1rem, calc(1rem + .5vmin), 3rem);
+}
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+a:visited {
+  color: var(--link-visited);
+}
+a:hover,
+a:focus {
+  color: var(--link-hover-focus);
+  text-decoration: underline;
+}
+a:active {
+  color: var(--link-active);
+  text-decoration: underline;
+}
+a::before {
+  content: '\2B9E';
+  padding-inline-end: .5em;
 }

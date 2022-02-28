@@ -1,0 +1,69 @@
+:root {
+  --background: #fff;
+  --background-alt: #222;
+
+  --text: #222;
+  --text-alt: #fff;
+  --family: sans-serif;
+
+  --title-family: serif;
+  --title-weight: 500;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #fff;
+    --background-alt: #f8f8f8;
+
+    --text: #222;
+    --text-alt: #222;
+      
+    --title-weight: 300;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #111;
+    --background-alt: #222;
+
+    --text: #fafafa;
+    --text-alt: #fafafa;
+      
+    --title-weight: 600;
+  }
+}
+::selection {
+  color: white;
+  background-color: red;
+}
+body {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(60ch, 100vw), 1fr));
+  min-height: 100vh;
+  margin: 0;
+  font-family: var(--family);
+  color: var(--text);
+  background-color: var(--background);
+}
+header,
+main {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1em;
+}
+header {
+  background-color: var(--background-alt);
+  color: var(--text-alt);
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--title-family);
+  font-weight: var(--title-weight);
+  text-align: center;
+}
+h1 {
+  font-size: clamp(1rem, calc(2rem + 4vmin), 15rem);
+}
+h2 {
+  font-size: clamp(1rem, calc(1rem + 1vmin), 5rem);
+}
